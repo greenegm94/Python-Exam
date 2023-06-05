@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Welcome User!</title>
+</head>
+<body>
+
+    <div class="headers">
+        <h1 class="title">Howdy {{user.first_name}}!</h1>
+    </div>
+
+    <a href="/" class="auto">Logout</a>
+
+    <a href="/add_show" class="auto">+Create</a>
+
+    <h3>All TV Shows</h3>
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Network</th>
+                <th>Release Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% if shows %}
+                {% for show in shows %}
+                    <tr>
+                        <td>{{ show.title }}</td>
+                        <td>{{ show.network }}</td>
+                        <td>{{ show.release_date }}</td>
+
+                        <td>
+                            <a href="/shows/{{show.id}}" class="btn btn-success">View show</a>
+                            {% if session['user_id'] == show.user_id %}
+                                <a href="/shows/edit/{{show.id}}" class="btn btn-secondary">Edit</a>
+                                <a href="/shows/destroy/{{show.id}}" class="btn btn-danger">Delete</a>
+                            {% endif %}
+                        </td>
+                        
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+    
+</body>
+</html>

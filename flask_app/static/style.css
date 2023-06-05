@@ -1,0 +1,66 @@
+* {
+    margin: 5px;
+    padding: 5px;
+    font-family: sans-serif;
+}
+
+.register, .login {
+    display: inline-block;
+    background-color: teal;
+    max-width: 300px;
+    vertical-align: top;
+    padding: 10px
+}
+
+label, input, table, form, .form, textarea{
+    display: block;
+    max-width: 525px;
+    background-color: teal;
+}
+
+table {
+    border: solid;
+    border-color: black;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: gray;
+    color: white;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.text_area{
+    min-width: 200px;
+}
+
+h1{
+    display: inline;
+}
+
+a{
+    display: block;
+}
+
+.edit_form{
+    display: block;
+    max-width: 500px;
+    background-color: teal;
+}
+
+.details {
+    display: block;
+    max-width: 500px;
+    background-color: teal;

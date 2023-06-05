@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>View Show</title>
+</head>
+<body>
+    <a href="/shows" class="auto">TV Shows</a>
+
+    <a href="/" class="auto">Logout</a>
+    
+    <h1>{{ show.title }}</h1>
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th> Network</th>
+                <th> Release Date</th>
+                <th class="text_area">Description</th>
+                <th>Posted By</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>{{ show.network }}</td>
+                <td>{{ show.release_date }}</td>
+                <td>{{ show.description }}</td>
+                <td>{{show.first_name}} {{show.last_name}}</td>
+                
+                
+            </tr>
+        </tbody>
+    </table>
+
+    
+</body>
+</html>

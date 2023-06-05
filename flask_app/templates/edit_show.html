@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"">
+    <title>Edit Show</title>
+</head>
+<body>
+    
+    <h2>Edit show</h2>
+    <a href="/shows" class="auto">TV Shows</a>
+
+    <a href="/" class="auto">Logout</a>
+    <div class="edit_form">
+        <form action="/Update_show/{{show.id}}" method="POST">
+            {% with messages = get_flashed_messages() %}     
+                    {% if messages %}                           
+                        {% for message in messages %}            
+                            <p>{{message}}</p>                   
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            <label for="title">Title:</label>
+            <textarea name="title" cols="40" rows="1">{{show.title}}</textarea>
+            <!-- <input type="text" name="title" value={{show.title}}> -->
+            <label for="network">Network:</label>
+            <textarea name="network" cols="40" rows="1">{{show.network}}</textarea>
+            <!-- <input type="text" name="network" value="{{show.network}}"> -->
+            <label for="release_date">Release Date:</label>
+            <input type="date" name="release_date" value={{show.release_date}}>
+            <label for="description">Description:</label>
+            <textarea name="description" cols="40" rows="5">{{show.description}}</textarea>
+
+            <input type="submit" value="Update">
+        </form> 
+    </div>
+
+</body>
+</html>
